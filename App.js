@@ -41,7 +41,10 @@ export default class App extends React.Component {
             });                
           }}>
           <View style={styles.detail}>
-            <Image style={{width: 256, height: 512}} source={{ uri: this.state.selected_item.attributes.variants_data[0].primary_image_urls.medium_url}} />
+            <Text style={styles.title}>
+              {this.state.selected_item.attributes.name}                            
+            </Text>          
+            <Image style={{width: 256, height: 512}} source={{ uri: this.state.selected_item.attributes.variants_data[0].primary_image_urls.large_url}} />
           </View>
         </TouchableWithoutFeedback>
       }
@@ -73,21 +76,22 @@ export default class App extends React.Component {
 
 const styles = StyleSheet.create({
   title: {
-    fontSize: 14,
+    zIndex: 10,
+    fontSize: 13,
+    lineHeight: 14,
     fontWeight: 'light',    
     color: '#999',
     textAlign: 'center',  
+    marginBottom: 10,
   },  
   box: {
     flex: 1,
-    width: 120,
-    height: 180,
-    minWidth: 120,
-    minHeight: 180,
+    width: 200,
+    height: 220,
     marginBottom: 10,
     marginTop: 10,
-    borderColor: '#aaa',    
-    backgroundColor: '#bbb',
+    justifyContents: 'center',
+    alignItems: 'center',
   },
   detail: {
     zIndex: 100,
